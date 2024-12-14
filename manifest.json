@@ -1,0 +1,10 @@
+{
+  "manifest_version": 3,
+  "name": "FormExpo",
+  "version": "1.0",
+  "description": "A Chrome extension for form management",
+  "permissions": [],
+  "action": {
+    "default_popup": "popup.html"
+  }
+}
