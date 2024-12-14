@@ -1,94 +1,84 @@
-# FormExpo - Form Data Import/Export Extension
+# FormExpo
 
 ![FormExpo Logo](icon128.png)
 
-## Overview
+A Chrome extension that simplifies form data management by allowing you to export and import form data across websites.
 
-FormExpo is a powerful Chrome extension that simplifies the way you handle web forms. Whether you're filling out multiple similar forms, backing up form data, or sharing form information, FormExpo makes the process seamless and efficient.
+## Features
 
-## Key Features
+- **Export Forms**: Save form data to JSON or XML files
+- **Import Forms**: Auto-fill forms using previously exported data
+- **Smart Matching**: Intelligently matches form fields using IDs, names, and positions
+- **Privacy First**: All data stays in your browser - no external servers
 
-### 🔄 Easy Form Data Export
-- Export form data to JSON or XML format
-- Preserve all form field values, including:
-  - Text inputs
-  - Checkboxes
-  - Radio buttons
-  - Select dropdowns
-  - Text areas
-- Maintain field relationships and structure
+## Installation from Chrome Web Store
 
-### 📥 Smart Form Import
-- Import previously exported form data
-- Intelligent field matching using:
-  - Field IDs
-  - Field names
-  - Field types and positions
-- Automatic form filling with imported data
+1. Visit the [FormExpo Chrome Web Store page](https://chrome.google.com/webstore/detail/formexpo)
+2. Click "Add to Chrome"
+3. Click "Add extension" in the popup
 
-### 💡 Smart Features
-- Works with any web form
-- Preserves form structure and relationships
-- Supports multiple forms on a single page
-- Maintains field validation states
-- Triggers appropriate form events for compatibility
+## For Developers
 
-## Use Cases
+### Local Development Setup
 
-- **Save Time**: Pre-fill forms with commonly used information
-- **Data Backup**: Export form data before submission as a backup
-- **Form Templates**: Create templates for frequently used forms
-- **Data Transfer**: Move form data between different websites
-- **Testing**: Quickly fill forms during website testing
+1. Clone the repository:
+   ```bash
+   git clone https://github.com/yourusername/formexpo.git
+   cd formexpo
+   ```
 
-## How to Use
+2. Load the extension in Chrome:
+   - Open Chrome and go to `chrome://extensions/`
+   - Enable "Developer mode" in the top right
+   - Click "Load unpacked"
+   - Select the `formexpo` directory
 
-1. **Export Form Data**:
-   - Navigate to any webpage with a form
-   - Click the FormExpo icon
-   - Select the form you want to export
-   - Choose JSON or XML format
-   - Save the exported file
+### Project Structure
 
-2. **Import Form Data**:
-   - Go to the target form page
-   - Click the FormExpo icon
-   - Select the form
-   - Click "Import" and choose your saved file
-   - Watch as the form fills automatically
+```
+formexpo/
+├── manifest.json     # Extension configuration
+├── popup.html       # Extension popup UI
+├── popup.js         # Main extension logic
+├── background.js    # Background service worker
+└── icons/          # Extension icons
+```
 
-## Privacy & Security
+### Development Workflow
 
-- Works entirely in your browser
-- No data sent to external servers
-- No personal information collected
-- Open source for transparency
+1. Make your changes to the source files
+2. Test locally:
+   - Click the refresh icon on your extension card in `chrome://extensions/`
+   - Click the extension icon to test the popup
+   - Use Chrome DevTools for debugging:
+     - Right-click the extension icon and select "Inspect popup" for popup debugging
+     - Click "service worker" in chrome://extensions for background script debugging
 
-## Technical Details
+3. Common test scenarios:
+   - Export form data to both JSON and XML
+   - Import data into forms with matching and non-matching field names
+   - Test with various form field types (text, checkbox, radio, select)
+   - Verify proper error handling with invalid import files
 
-- Lightweight and fast
-- No external dependencies
-- Compatible with modern web standards
-- Regular updates and maintenance
+### Building for Production
 
-## Support
+1. Update version in `manifest.json`
+2. Create a zip file:
+   ```bash
+   zip -r formexpo.zip * -x "*.git*" -x "*.md"
+   ```
 
-Having issues or suggestions? We're here to help:
-- [Report a bug](https://github.com/yourusername/formexpo/issues)
-- [Request a feature](https://github.com/yourusername/formexpo/issues)
-- [View the source code](https://github.com/yourusername/formexpo)
+### Contributing
 
-## Contributing
-
-We welcome contributions! Feel free to:
-- Fork the repository
-- Create a feature branch
-- Submit a pull request
+1. Fork the repository
+2. Create a feature branch
+3. Make your changes
+4. Submit a pull request
 
 ## License
 
-MIT License - Feel free to use and modify as needed.
+MIT License - See [LICENSE](LICENSE) for details
 
 ---
 
-Made with ❤️ for the web community
+For bugs and feature requests, please [create an issue](https://github.com/yourusername/formexpo/issues)
